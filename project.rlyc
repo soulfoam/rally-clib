@@ -1,0 +1,24 @@
+targets =
+[
+    default = 
+    [
+        links = 
+        [
+            x64_linux_gcc =
+            [
+                "m"
+            ],
+
+            aarch64_linux_gcc =
+            [
+                "m"
+            ],
+
+            x64_windows_mingw =
+            [
+                "msvcrt"
+            ]
+        ]
+    ]
+
+]

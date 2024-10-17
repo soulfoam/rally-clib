@@ -1,0 +1,29 @@
+export_library
+{
+    clib_tm :: struct 
+    {
+        tm_sec   : c_int; // seconds, range 0 to 59
+        tm_min   : c_int; // minutes, range 0 to 59
+        tm_hour  : c_int; // hours, range 0 to 23
+        tm_mday  : c_int; // day of the month, range 1 to 31
+        tm_mon   : c_int; // month, range 0 to 11
+        tm_year  : c_int; // The number of years since 1900
+        tm_wday  : c_int; // day of the week, range 0 to 6
+        tm_yday  : c_int; // day in the year, range 0 to 365
+        tm_isdst : c_int; // daylight saving time
+    }
+
+    clib_clock_t  :: type_alias = c_long;
+    clib_time_t   :: type_alias = c_long;
+
+    clib_asctime   :: fn (tm: clib_tm&) -> c_char&                                            = extern "asctime";
+    clib_clock     :: fn () -> clib_clock_t                                                   = extern "clock";
+    clib_ctime     :: fn (timer: clib_time_t&) -> c_char&                                     = extern "ctime";
+    clib_difftime  :: fn (time1: clib_time_t, time2: clib_time_t) -> c_double                 = extern "difftime";
+    clib_gmtime    :: fn (timer: clib_time_t&) -> clib_tm&                                    = extern "gmtime";
+    clib_localtime :: fn (timer: clib_time_t&) -> clib_tm&                                    = extern "localtime";
+    clib_mktime    :: fn (tm: clib_tm&) -> clib_time_t                                        = extern "mktime";
+    clib_strftime  :: fn (str: c_char&, max_size: usize, fmt: c_char&, tm: clib_tm&) -> usize = extern "strftime";
+    clib_time      :: fn (timer: clib_time_t&) -> clib_time_t                                 = extern "time";
+
+}

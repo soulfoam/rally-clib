@@ -1,0 +1,17 @@
+export_library
+{
+    clib_isalnum  :: fn (c: c_int) -> c_int = extern "isalnum"; 
+    clib_isalpha  :: fn (c: c_int) -> c_int = extern "isalpha"; 
+    clib_iscntrl  :: fn (c: c_int) -> c_int = extern "iscntrl"; 
+    clib_isdigit  :: fn (c: c_int) -> c_int = extern "isdigit"; 
+    clib_isgraph  :: fn (c: c_int) -> c_int = extern "isgraph"; 
+    clib_islower  :: fn (c: c_int) -> c_int = extern "islower"; 
+    clib_isprint  :: fn (c: c_int) -> c_int = extern "isprint"; 
+    clib_ispunct  :: fn (c: c_int) -> c_int = extern "ispunct"; 
+    clib_isspace  :: fn (c: c_int) -> c_int = extern "isspace"; 
+    clib_isupper  :: fn (c: c_int) -> c_int = extern "isupper"; 
+    clib_isxdigit :: fn (c: c_int) -> c_int = extern "isxdigit";
+    clib_tolower  :: fn (c: c_int) -> c_int = extern "tolower"; 
+    clib_toupper  :: fn (c: c_int) -> c_int = extern "toupper"; 
+}
+

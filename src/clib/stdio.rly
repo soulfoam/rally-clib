@@ -1,0 +1,33 @@
+export_library
+{
+	clib_file :: type_opaque;
+
+	clib_stdin     :: fn () -> clib_file& = extern "__RLY_stdin";
+	clib_stdout    :: fn () -> clib_file& = extern "__RLY_stdout";
+	clib_stderr    :: fn () -> clib_file& = extern "__RLY_stderr";
+	clib_eof       :: fn () -> c_int      = extern "__RLY_EOF";
+	clib_seek_set  :: fn () -> c_int      = extern "__RLY_SEEK_SET";
+	clib_seek_cur  :: fn () -> c_int      = extern "__RLY_SEEK_CUR";
+	clib_seek_end  :: fn () -> c_int      = extern "__RLY_SEEK_END";
+
+	clib_printf    :: fn (fmt: c_char&, args: c_variadic) -> c_int                                         = extern "printf";
+	clib_vprintf   :: fn (fmt: c_char&, args: clib_va_list&) -> c_int                                      = extern "vprintf";
+	clib_vsnprintf :: fn (buffer: c_char&, buffer_size: usize, fmt: c_char&, args: clib_va_list&) -> c_int = extern "vsnprintf";
+	clib_scanf     :: fn (fmt: c_char&, args: c_variadic) -> c_int                                         = extern "scanf";
+	clib_puts      :: fn (str: c_char&) -> c_int                                                           = extern "puts";
+	clib_putchar   :: fn (ch: c_int) -> c_int                                                              = extern "putchar";
+
+	clib_fopen     :: fn (filename: c_char&, mode: c_char&) -> clib_file&                      = extern "fopen";
+	clib_fclose    :: fn (file: clib_file&) -> c_int                                           = extern "fclose";
+	clib_fread     :: fn (buffer: void&, size: usize, count: usize, file: clib_file&) -> usize = extern "fread";
+	clib_fwrite    :: fn (buffer: void&, size: usize, count: usize, file: clib_file&) -> usize = extern "fwrite";
+	clib_fflush    :: fn (file: clib_file&) -> c_int                                           = extern "fflush";
+	clib_ftell     :: fn (file: clib_file&) -> c_long                                          = extern "ftell";
+	clib_fseek     :: fn (file: clib_file&, offset: c_long, whence: c_int)                     = extern "fseek";
+	clib_rewind    :: fn (file: clib_file&)                                                    = extern "rewind";
+	clib_ferror    :: fn (file: clib_file&) -> c_int                                           = extern "ferror";
+	clib_clearerr  :: fn (file: clib_file&)                                                    = extern "clearerr";
+
+	clib_remove    :: fn (filename: c_char&) -> c_int                                          = extern "remove";
+}
+

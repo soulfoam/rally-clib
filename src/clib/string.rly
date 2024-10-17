@@ -1,0 +1,7 @@
+export_library
+{
+	clib_memcpy :: fn (destination: void&, source: void&, num: usize) -> void& = extern "memcpy";
+	clib_memset :: fn (ptr: void&, value: c_int, num: usize) -> void&          = extern "memset";
+	clib_memcmp :: fn (ptr1: void&, ptr2: void&, num: usize) -> c_int          = extern "memcmp";
+	clib_strlen :: fn (str: c_char&) -> usize                                  = extern "strlen";
+}

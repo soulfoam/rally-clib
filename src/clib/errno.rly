@@ -1,0 +1,4 @@
+export_library
+{
+	clib_errno :: fn () -> c_int& = extern "__RLY_errno";
+}

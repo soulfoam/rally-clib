@@ -1,0 +1,26 @@
+export_library
+{
+    clib_signal_fn :: type_alias = fn (sig: c_int);
+    clib_signal :: fn (sig: c_int, handler: clib_signal_fn&) -> clib_signal_fn& = extern "signal";
+
+    CLIB_SIG_ERR :: define clib_signal_fn& = -1 as clib_signal_fn&; // Error return
+    CLIB_SIG_DFL :: define clib_signal_fn& = 0 as clib_signal_fn&;  // Default action
+    CLIB_SIG_IGN :: define clib_signal_fn& = 1 as clib_signal_fn&;  // Ignore signal
+
+    // ISO C99 signals
+    CLIB_SIGINT  ::  define c_int = 2;   // Interactive attention signal
+    CLIB_SIGILL  ::  define c_int = 4;   // Illegal instruction
+    CLIB_SIGABRT ::  define c_int = 6;   // Abnormal termination
+    CLIB_SIGFPE  ::  define c_int = 8;   // Erroneous arithmetic operation
+    CLIB_SIGSEGV ::  define c_int = 11;  // Invalid access to storage
+    CLIB_SIGTERM ::  define c_int = 15;  // Termination request
+
+    // Historical signals specified by POSIX
+    CLIB_SIGHUP  :: define c_int = 1;   // Hangup
+    CLIB_SIGQUIT :: define c_int = 3;   // Quit
+    CLIB_SIGTRAP :: define c_int = 5;   // Trace/breakpoint trap
+    CLIB_SIGKILL :: define c_int = 9;   // Killed
+    CLIB_SIGPIPE :: define c_int = 13;  // Broken pipe
+    CLIB_SIGALRM :: define c_int = 14;  // Alarm clock
+
+}

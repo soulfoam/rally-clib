@@ -1,0 +1,17 @@
+export_library
+{
+	clib_malloc  :: fn (size: usize) -> void&                                        = extern "malloc";
+	clib_realloc :: fn (ptr: void&, new_size: usize) -> void&                        = extern "realloc";
+	clib_free    :: fn (ptr: void&)                                                  = extern "free";
+
+	clib_exit    :: fn (status: c_int)                                               = extern "exit";
+
+    clib_srand   :: fn (seed: c_uint)                                                = extern "srand";
+    clib_rand    :: fn () -> c_int                                                   = extern "rand";
+
+    clib_strtol  :: fn (str: c_char&, end_ptr: c_char&&, base: c_int) -> c_longlong  = extern "strtol";
+    clib_strtoul :: fn (str: c_char&, end_ptr: c_char&&, base: c_int) -> c_ulonglong = extern "strtoul";
+    clib_strtod  :: fn (str: c_char&, end_ptr: c_char&&) -> c_double                 = extern "strtod";
+
+    clib_system  :: fn (str: c_char&) -> c_int                                       = extern "system";
+}
