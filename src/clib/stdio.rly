@@ -10,12 +10,12 @@ export_library
 	clib_seek_cur  :: fn () -> c_int      = extern "__RLY_SEEK_CUR";
 	clib_seek_end  :: fn () -> c_int      = extern "__RLY_SEEK_END";
 
-	clib_printf    :: fn (fmt: c_char&, args: c_variadic) -> c_int                                         = extern "printf";
-	clib_vprintf   :: fn (fmt: c_char&, args: clib_va_list&) -> c_int                                      = extern "vprintf";
-	clib_vsnprintf :: fn (buffer: c_char&, buffer_size: usize, fmt: c_char&, args: clib_va_list&) -> c_int = extern "vsnprintf";
-	clib_scanf     :: fn (fmt: c_char&, args: c_variadic) -> c_int                                         = extern "scanf";
-	clib_puts      :: fn (str: c_char&) -> c_int                                                           = extern "puts";
-	clib_putchar   :: fn (ch: c_int) -> c_int                                                              = extern "putchar";
+	clib_printf    :: fn (fmt: c_char&, args: c_variadic) -> c_int                                      = extern "printf";
+	clib_vprintf   :: fn (fmt: c_char&, args: c_va_list&) -> c_int                                      = extern "vprintf";
+	clib_vsnprintf :: fn (buffer: c_char&, buffer_size: usize, fmt: c_char&, args: c_va_list&) -> c_int = extern "vsnprintf";
+	clib_scanf     :: fn (fmt: c_char&, args: c_variadic) -> c_int                                      = extern "scanf";
+	clib_puts      :: fn (str: c_char&) -> c_int                                                        = extern "puts";
+	clib_putchar   :: fn (ch: c_int) -> c_int                                                           = extern "putchar";
 
 	clib_fopen     :: fn (filename: c_char&, mode: c_char&) -> clib_file&                      = extern "fopen";
 	clib_fclose    :: fn (file: clib_file&) -> c_int                                           = extern "fclose";
