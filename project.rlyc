@@ -13,16 +13,6 @@ targets =
             [
                 "m"
             ],
-
-            x64_windows_mingw =
-            [
-                "msvcrt"
-            ],
-
-            x64_windows_msvc =
-            [
-                "msvcrt"
-            ]
         ]
     ]
 
