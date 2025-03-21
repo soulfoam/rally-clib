@@ -42,4 +42,7 @@ export_library
 	clib_log10f :: fn (value: c_float) -> c_float                      = extern "log10f";
 	clib_modf   :: fn (x: c_double, int_part: c_double&) -> c_double   = extern "modf";
 	clib_modff  :: fn (x: c_float, int_part: c_float&) -> c_float      = extern "modff";
+    clib_exp    :: fn (x: c_double) -> c_double                        = extern "exp";
+    clib_frexp  :: fn (x: c_double, exp: c_int&) -> c_double           = extern "frexp";
+    clib_ldexp  :: fn (x: c_double, exp: c_int) -> c_double            = extern "ldexp";
 }
